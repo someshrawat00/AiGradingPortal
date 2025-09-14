@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    padding: 0 50px;
+    position: absolute;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo span {
+    font-size: 25px;
+    font-weight: 600;
+}

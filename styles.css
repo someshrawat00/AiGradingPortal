@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* Responsive Font Sizes Using Clamp */
+
+  /* Small Text (xs) */
+  .text-xs {
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    /* min: 12px, grows with viewport, max: 14px */
+  }
+
+  /* Base Text */
+  .text-base {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    /* min: 16px, grows up to 18px */
+  }
+
+  /* Large Text */
+  .text-lg {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    /* min: 18px, up to 24px */
+  }
+
+  /* Extra Large Text */
+  .text-xl {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    /* min: 20px, up to 32px */
+  }
+
+  /* 2XL - 5XL Headings */
+  .text-2xl {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    /* min: 24px, max: 36px */
+  }
+
+  .text-3xl {
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    /* min: 30px, max: 48px */
+  }
+
+  .text-4xl {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    /* min: 36px, max: 64px */
+  }
+
+  .text-5xl {
+    font-size: clamp(3rem, 6vw, 5rem);
+    /* min: 48px, max: 80px */
+  }
+
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+
+/* .container {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button {
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upload-box {
+  background: #e2ebf0;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.score-circle {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px;
+} */
