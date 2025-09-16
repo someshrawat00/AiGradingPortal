@@ -67,6 +67,10 @@
     margin-bottom: 20px;
 }
 
+.uploadedBox Button{
+    width: 200px;
+}
+
 @media (max-width: 1400px) {
     .uploadBox {
         scale: .75;

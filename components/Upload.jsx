@@ -4,19 +4,31 @@ import styles from './styles/upload.module.css';
 import bgImage from '../assets/bg.png';
 import uploadImage from '../assets/folder.png';
 import Button from './Button';
+import { useLoading } from '../contexts/LoadingContext';
 
 export default function Upload() {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
+  const {showLoading, hideLoading} = useLoading();
 
   const handleUpload = (e) => {
     e.preventDefault();
     setFile(e.target.files[0]);
   };
+  
+  const handleGrade = () => {
+    console.log("adfa")
+    showLoading('Grading Assignment')
+    setTimeout(() => {
+          // Hide loading when done
+          hideLoading();
+          navigate('/result');
+        }, 5000);
+  }
 
   return (
 
-    <form onSubmit={handleUpload}>
+    <div >
       <div
         className={styles.container}
         style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
@@ -25,18 +37,18 @@ export default function Upload() {
         {file !== null ? (
           <div className={styles.uploadedBox}>
             <h1>{file.name}</h1>
-            <Button onClick={() => navigate('/result')} >Grade</Button>
+            <Button onClick={() => handleGrade()}>Grade</Button>
           </div >) : (
           <div className={styles.uploadBox}>
             <input type="file" accept=".pdf" onChange={handleUpload} />
             <p>Drag and Drop Files Here</p>
-            <img src={uploadImage} alt="" width={180} />
-            <Button >Upload</Button>
+            <img src={uploadImage} alt="" width={200} />
+            <Button style={{width:"300px", height:"70px", display:"flex" , justifyContent:"center", alignItems:"center", fontSize:"20px"}} >Upload</Button>
           </div>
         )
         }
       </div>
-    </form >
+    </div >
   )
 }
 

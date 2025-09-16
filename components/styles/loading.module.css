@@ -1,0 +1,108 @@
+.spinner {
+  width: 45vw;
+  height: 45vw;
+  position: absolute;
+  /* background: linear-gradient(140deg, #449bff 12%, #FFFFFF ,hsl(230, 95%, 64%), #2019F5 ); */
+  background-color: #a3ceff;
+  background-position: center;
+  background-size: 200% 200%;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: center center;
+  mask-image: url('../../assets/Star.png');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.spinner img{
+  width: 140%;
+  height: 140%;;
+  display: block;
+  position: absolute;
+  margin-top: -20%;
+  margin-left: -20%;
+  transform-origin: center center;
+  animation: gradient 10s linear infinite reverse;
+}
+
+  
+@keyframes gradient {
+  0% {
+    transform: rotate(0deg) translate(0%);
+  }
+
+  50%{
+    transform: rotate(180deg) translate(10%);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(0%);
+  }
+}
+
+.loadingText {
+  width: 70vw;
+  height: 100vh;
+  background: url('../../assets/loadingbg.png');
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loadingText p {
+  font-size: 60px;
+  font-weight: 600;
+  background: linear-gradient(90deg,
+      #080808 20%,
+      #ffffff 40%,
+      #1d1d1d 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+.loadingTextContent {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-80%);
+  position: absolute;
+}
+
+.loadingText p{
+  margin: auto;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
