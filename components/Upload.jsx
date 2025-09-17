@@ -23,7 +23,7 @@ export default function Upload() {
           // Hide loading when done
           hideLoading();
           navigate('/result');
-        }, 5000);
+        }, 10000);
   }
 
   return (

@@ -30,15 +30,15 @@
   
 @keyframes gradient {
   0% {
-    transform: rotate(0deg) translate(0%);
+    transform: rotate(0deg) translate(1);
   }
 
   50%{
-    transform: rotate(180deg) translate(10%);
+    transform: rotate(180deg) scale(2);
   }
 
   100% {
-    transform: rotate(360deg) translate(0%);
+    transform: rotate(360deg) translate(1);
   }
 }
 
