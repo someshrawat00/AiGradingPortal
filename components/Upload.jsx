@@ -33,6 +33,8 @@ export default function Upload() {
         className={styles.container}
         style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
+        <div className={styles.bgStar}>
+        </div>
         <h1>{file !== null ? "Assignment Uploaded Successfully " : "Upload Assignment PDF for grading"}</h1>
         {file !== null ? (
           <div className={styles.uploadedBox}>

@@ -1,12 +1,16 @@
 .header {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    height: 10vh;
-    padding: 0 50px;
+    justify-content: space-between;
+    height: 15vh;
+    padding: 10px 60px;
     position: absolute;
+    width: 100vw;
+    z-index: 999;
 }
 
-.logo {
+.logo a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,4 +25,10 @@
 .logo span {
     font-size: 25px;
     font-weight: 600;
+    color: #222222;
+}
+
+a {
+    text-decoration: none;
+    color: #fafafa;
 }
