@@ -9,21 +9,21 @@ import { useLoading } from '../contexts/LoadingContext';
 export default function Upload() {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
-  const {showLoading, hideLoading} = useLoading();
+  const { showLoading, hideLoading } = useLoading();
 
   const handleUpload = (e) => {
     e.preventDefault();
     setFile(e.target.files[0]);
   };
-  
+
   const handleGrade = () => {
     console.log("adfa")
     showLoading('Grading Assignment')
     setTimeout(() => {
-          // Hide loading when done
-          hideLoading();
-          navigate('/result');
-        }, 10000);
+      // Hide loading when done
+      hideLoading();
+      navigate('/result');
+    }, 10000);
   }
 
   return (
@@ -36,19 +36,22 @@ export default function Upload() {
         <div className={styles.bgStar}>
         </div>
         <h1>{file !== null ? "Assignment Uploaded Successfully " : "Upload Assignment PDF for grading"}</h1>
-        {file !== null ? (
-          <div className={styles.uploadedBox}>
-            <h1>{file.name}</h1>
-            <Button onClick={() => handleGrade()}>Grade</Button>
-          </div >) : (
-          <div className={styles.uploadBox}>
-            <input type="file" accept=".pdf" onChange={handleUpload} />
-            <p>Drag and Drop Files Here</p>
-            <img src={uploadImage} alt="" width={200} />
-            <Button style={{width:"300px", height:"70px", display:"flex" , justifyContent:"center", alignItems:"center", fontSize:"20px"}} >Upload</Button>
-          </div>
-        )
-        }
+        <div className={`${styles.uploadContainer} ${file ? styles.expanded : ""}`}>
+          {file !== null ? (
+            <div className={styles.uploadedBox}>
+              <h1>{file.name}</h1>
+              <Button onClick={() => handleGrade()}>Grade</Button>
+            </div >
+          ) : (
+            <div className={styles.uploadBox}>
+              <input type="file" accept=".pdf" onChange={handleUpload} />
+              <p>Drag and Drop Files Here</p>
+              <img src={uploadImage} alt="" width={200} />
+              <Button style={{ width: "300px", height: "70px", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "20px" }} >Upload</Button>
+            </div>
+          )
+          }
+        </div>
       </div>
     </div >
   )

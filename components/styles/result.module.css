@@ -116,3 +116,8 @@
     mask-size: contain;
 }
 
+@media (max-width: 1400px) {
+    .resultBox{
+        scale: .75;
+    }
+}

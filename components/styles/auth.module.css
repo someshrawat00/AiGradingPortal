@@ -68,4 +68,25 @@
     font-weight: 600;
 }
 
+@media (max-width: 1400px) {
+
+    .container h1{
+        margin-bottom: 20px;
+    }
+    .formBox {
+        scale: .75;
+    }
+    .formBox input{
+        width: 55vw;
+    }
+
+    .formBox Button{
+        width: 55vw;
+    }
+
+    .container p{
+        scale: .75;
+        margin-top: -40px;
+    }
+}
 
