@@ -16,17 +16,27 @@ export default function Upload() {
 
   const handleUpload = async(e) => {
     e.preventDefault();
-    showLoading("Grading Assignment");
-    const uploadedFile = e.target.files[0];
+    // showLoading("Grading Assignment");
+    const uploadedFile = await e.target.files[0];
     setFile(uploadedFile);
-    const result = await gradePDFwithGemini(uploadedFile);
+    // const result = await gradePDFwithGemini(uploadedFile);
+    // console.log(result);
+    // const parsedResult = await JSON.parse(result);
+    // setResult(parsedResult); 
+    // hideLoading();
+    // navigate('/result');
+  };
+
+  const handleGrade = async() => {
+    if (!file) return;
+    showLoading("Grading Assignment");
+    const result = await gradePDFwithGemini(file);
     console.log(result);
     const parsedResult = await JSON.parse(result);
     setResult(parsedResult); 
     hideLoading();
     navigate('/result');
   };
-
 
   return (
 
