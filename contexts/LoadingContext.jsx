@@ -19,7 +19,8 @@ export const LoadingProvider = ({ children }) => {
 
   const hideLoading = useCallback(() => {
     setIsLoading(false);
-    setLoadingText('Loading...');
+    setLoadingText('Grading Assignment');
+    setInterval(() => { setLoadingText('Wait a second'); }, 200);
   }, []);
 
   const LoadingOverlay = () => {

@@ -5,26 +5,28 @@ import bgImage from '../assets/bg.png';
 import uploadImage from '../assets/folder.png';
 import Button from './Button';
 import { useLoading } from '../contexts/LoadingContext';
+import { gradePDFwithGemini } from "../geminiGrader";
+import { ResultContext } from '../contexts/resultContext';
 
 export default function Upload() {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const { showLoading, hideLoading } = useLoading();
+  const { setResult } = React.useContext(ResultContext);
 
-  const handleUpload = (e) => {
+  const handleUpload = async(e) => {
     e.preventDefault();
-    setFile(e.target.files[0]);
+    showLoading("Grading Assignment");
+    const uploadedFile = e.target.files[0];
+    setFile(uploadedFile);
+    const result = await gradePDFwithGemini(uploadedFile);
+    console.log(result);
+    const parsedResult = await JSON.parse(result);
+    setResult(parsedResult); 
+    hideLoading();
+    navigate('/result');
   };
 
-  const handleGrade = () => {
-    console.log("adfa")
-    showLoading('Grading Assignment')
-    setTimeout(() => {
-      // Hide loading when done
-      hideLoading();
-      navigate('/result');
-    }, 10000);
-  }
 
   return (
 

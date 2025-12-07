@@ -14,7 +14,7 @@ export default function Header() {
                         <span>Grading</span>
                     </Link>
                 </div>
-               <Button><Link to="/login">Login</Link></Button>
+               {/* <Button><Link to="/login">Login</Link></Button> */}
             </div>
         </div>
     );
